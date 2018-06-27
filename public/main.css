@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url(./assets/calibri.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url(./assets/Calibri_Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url(./assets/calibri.ttf) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url(./assets/Calibri_Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url(./assets/Calibri_Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'LUI icons';
+  src: url(./assets/lui-icons.ttf) format('truetype');
+}
+
+.topnav {
+  overflow: hidden;
+  background: #4477aa;
+  background: -moz-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -webkit-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -o-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -ms-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: linear-gradient(to right, #ffffff 0%, #4477aa 100%);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+/* .topnav {
+    overflow: hidden;
+    background-color: #152456;
+    border-style: solid;
+    border-width: 2px; 
+    border-color: #152456;
+  } */
+
+.topnav a {
+  float: left;
+  color: #152456;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 19px;
+  font-weight: bold;
+  font-family: 'QlikView Sans'
+}
+
+/* .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  } */
+
+.topnav img {
+  height: 25px;
+  max-width: 200px;
+}
+
+/* .TJUH_logo {
+  background-color: white;
+} */
+
+.filter {
+  height: 50px;
+  width: 200px;
+  padding: 10px
+}
+
+.kpi {
+  height: 100px;
+  width: 100%
+}
+
+.content {
+  padding: 10px;
+}
+
+.chart {
+  height: 300px;
+  width: 100%;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+}
+
+.data-container {
+  display: flex;
+  padding: 10px;
+}
+
+.chart-container {
+  flex-grow: 6
+}
+
+.kpi-container {
+  flex-grow: 1;
+  align-self: center;
+  margin-left: 10px;
+}
+
+.CurrentSelections {
+  height: 40px;
+  width: 100%;
+}
+.qv-subtoolbar-button{
+  display:none;
+  }
+  
+  .qv-selections-pager {
+  display: none;
+  } 
+  .buttons-end {
+    display: none;
+  }
+.text-wrap>.name{
+  color: #152456;
+  width: 100%;
+}
+.text>.values{
+  color: #47484b;
+}
+.current-selection-elem{
+  width: 250px !important;
+}
+.current-selection-elem:hover{
+  background-color: #b2b5b8 !important;
+}
+.wrap{
+  background-color: #4477aa;
+  background: -moz-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -webkit-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -o-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: -ms-linear-gradient(left, #ffffff 0%, #4477aa 100%);
+  background: linear-gradient(to right, #ffffff 0%, #4477aa 100%);
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+.borderbox{
+  border: none !important;
+}
+/* body{
+  background-image: url('./assets/images/tjuh.jpg');
+  background-color: #cccccc;
+} */
+  
+  
