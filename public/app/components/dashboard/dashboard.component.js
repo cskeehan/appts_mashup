@@ -5,6 +5,7 @@ define( 'dashboard',function () {
         function dashboardController(qlikService) {
             var vm = this;
             let dateId = 'USbknpk'
+            let provTypeId = 'JPVzh'
             // let dateId = 'cFxPpFQ'
             // let clinDepId = '35ffec88-a936-4c88-9918-10810e1cbf4b'
             // let clinDivId = 'd1b7308c-5a02-4992-b10a-91f0cd63e5ce'
@@ -27,6 +28,7 @@ define( 'dashboard',function () {
            
             function init() {
                 aQlikApp.getObject('dateFilter', dateId);
+                aQlikApp.getObject('provTypeFilter', provTypeId);
                 // aQlikApp.getObject('clinDepFilter', clinDepId);
                 // aQlikApp.getObject('clinDivFilter', clinDivId);
                 // aQlikApp.getObject('departmentFilter', departmentId);
