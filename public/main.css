@@ -89,17 +89,19 @@
 }
 
 .kpi {
-  height: 100px;
+  height: 180px;
   width: 100%
 }
 
 .content {
   padding: 10px;
+  width: 100%;
 }
 
 .chart {
-  height: 300px;
+  height: 800px;
   width: 100%;
+  margin: 20px;
 }
 
 .filter-container {
@@ -112,15 +114,14 @@
   padding: 10px;
 }
 
-.chart-container {
-  flex-grow: 6
-}
+/* .chart-container {
+} */
 
-.kpi-container {
+/* .kpi-container {
   flex-grow: 1;
   align-self: center;
   margin-left: 10px;
-}
+} */
 
 .CurrentSelections {
   height: 40px;
@@ -142,6 +143,7 @@
 }
 .text>.values{
   color: #47484b;
+  width: 100%;
 }
 .current-selection-elem{
   width: 250px !important;
@@ -161,9 +163,15 @@
 .borderbox{
   border: none !important;
 }
+.qv-object-title-text{
+  font-size: 18px;
+}
 /* body{
   background-image: url('./assets/images/tjuh.jpg');
   background-color: #cccccc;
 } */
-  
+.graph-container{
+  display: flex;
+  width: 100%;
+}
   
