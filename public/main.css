@@ -85,7 +85,7 @@
 .filter {
   height: 50px;
   width: 200px;
-  padding: 10px
+  padding: 10px;
 }
 
 .kpi {
@@ -97,6 +97,10 @@
   padding: 10px;
   width: 100%;
 }
+
+/* .content {
+  height: 600px;
+} */
 
 .chart {
   height: 800px;
@@ -170,8 +174,132 @@
   background-image: url('./assets/images/tjuh.jpg');
   background-color: #cccccc;
 } */
+
+/* .dropdown-list input[type="search"] {
+  padding: 5px 0;
+} */
+
 .graph-container{
   display: flex;
   width: 100%;
 }
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.dropdown-container {
+  width: 200px;
+  margin: 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.instructions {
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown-button {
+  float: left;
+  width: 100%;
+  background: whitesmoke;
+  padding: 10px 12px;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+.dropdown-button .dropdown-label,
+.dropdown-button .dropdown-quantity {
+  float: left;
+}
+
+.dropdown-button .dropdown-quantity {
+  margin-left: 4px;
+}
+
+.dropdown-button .fa-filter {
+  float: right;
+}
+
+.dropdown-button .fa-refresh {
+  float: right;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  z-index: 2;
+  background-color: white;
+}
+
+.semi-square {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.dropdown-list{
+  display: none
+}
+
+.dropdown-list ul {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px;
+  cursor: pointer;
+}
+
+ul li {
+  border: 1px black;
+}
+
+.dropdown-list ul input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+  border: 1px;
+}
+
+.dropdown-container:hover > .dropdown-list {
+  display: block;
+}
+
+.selections {
+  height: 50px;
+  width: 100%;
+}
+
+.options {
+  display: none
+}
+
+.S {
+  background-color: green;
+  color: white;
+}
+
+.O {
+  background-color: white;
+  color: black;
+}
+
+.X {
+  background-color: rgb(221, 220, 220);
+  color: black;
+}
+
+.lui-popover-container{  
+  position: fixed !important;
+  z-index: 1000 !important;
+} 
   
