@@ -1,40 +1,46 @@
 define( 'dashboard',function () {
     
     function dashboard() {
-        dashboardController.$inject = [];
-        function dashboardController() {
+        dashboardController.$inject = ['$rootScope', 'qlikService'];
+        function dashboardController($rootScope,qlikService) {
             var vm = this;
             vm.changeSel = changeSel;
             vm.toggleOpen = toggleOpen;
-            let dateId = 'KmdYJg'
-            let provTypeId = 'Cmhyjzp'
-            let chart1Id = 'VTthkJx'
-            let chart2Id = 'PFDXUK'
-            let chart3Id = 'ZSaDtKH'
-            let chart4Id = 'ChgJQm'
-            let chart5Id = 'dKHwpR'
-            let chart6Id = 'gbDnJa'
+            var dateId = 'KmdYJg'
+            var provTypeId = 'Cmhyjzp'
+            var chart1Id = 'VTthkJx'
+            var chart2Id = 'PFDXUK'
+            var chart3Id = 'ZSaDtKH'
+            var chart4Id = 'ChgJQm'
+            var chart5Id = 'dKHwpR'
+            var chart6Id = 'gbDnJa'
 
-            init();
+            var apps;
+
+            $rootScope.$on('apps-loaded',function(a){
+                apps = qlikService.getApps();
+                init();
+            })
+            
            
             function init() {
-                aQlikApp.clearAll().then(function(a){
-                    aQlikApp.getObject('dateFilter', dateId);
-                    aQlikApp.getObject('provTypeFilter', provTypeId);
-                    aQlikApp.getObject('chart1', chart1Id); //{noInteraction: true}
-                    aQlikApp.getObject('chart2', chart2Id);
-                    aQlikApp.getObject('chart3', chart3Id);
-                    aQlikApp.getObject('chart4', chart4Id);
-                    aQlikApp.getObject('currentSelections', 'currentSelections')
+                apps[0].clearAll().then(function(a){
+                    apps[0].getObject('dateFilter', dateId);
+                    apps[0].getObject('provTypeFilter', provTypeId);
+                    apps[0].getObject('chart1', chart1Id); //{noInteraction: true}
+                    apps[0].getObject('chart2', chart2Id);
+                    apps[0].getObject('chart3', chart3Id);
+                    apps[0].getObject('chart4', chart4Id);
+                    apps[0].getObject('currentSelections', 'currentSelections')
                
             })
         
-                aQlikApp2.clearAll().then(function(a){
-                    aQlikApp2.getObject('chart5', chart5Id);
-                    aQlikApp2.getObject('chart6', chart6Id);
+                apps[1].clearAll().then(function(a){
+                    apps[1].getObject('chart5', chart5Id);
+                    apps[1].getObject('chart6', chart6Id);
             })
                 // init create list
-                aQlikApp.createList({
+                apps[0].createList({
                     "qDef": {"qFieldDefs": ["Appt Date Calendar Month Year"]},
                         "qInitialDataFetch": [{
                             qTop : 0,
@@ -45,7 +51,7 @@ define( 'dashboard',function () {
                     },parseDateList)
 
                     // init create list
-                    aQlikApp.createList({
+                    apps[0].createList({
                     "qDef": {"qFieldDefs": ["Provider Type"]},
                         "qInitialDataFetch": [{
                             qTop : 0,
@@ -56,7 +62,7 @@ define( 'dashboard',function () {
                     },parseTypeList)
 
                     // init create list
-                    aQlikApp.createList({
+                    apps[0].createList({
                     "qDef": {"qFieldDefs": ["Clinical Department"]},
                         "qInitialDataFetch": [{
                             qTop : 0,
@@ -67,7 +73,7 @@ define( 'dashboard',function () {
                     },parseClinDepList)
 
                     // init create list
-                    aQlikApp.createList({
+                    apps[0].createList({
                         "qDef": {"qFieldDefs": ["Clinical Division"]},
                             "qInitialDataFetch": [{
                                 qTop : 0,
@@ -78,7 +84,7 @@ define( 'dashboard',function () {
                         },parseDivList)
 
                     // init create list
-                    aQlikApp.createList({
+                    apps[0].createList({
                         "qDef": {"qFieldDefs": ["Department"]},
                             "qInitialDataFetch": [{
                                 qTop : 0,
@@ -91,15 +97,15 @@ define( 'dashboard',function () {
 
         function changeSel(field, val){
             // console.log(val)
-            let sel;
+            var sel;
             if(field=='Appt Date Calendar Month Year'){
                 sel = val.num
             }else{
                 sel = val.name
             }
             // console.log(val)
-            aQlikApp.field(field).selectValues([sel], true, true);
-            aQlikApp2.field(field).selectValues([sel], true, true);
+            apps[0].field(field).selectValues([sel], true, true);
+            apps[1].field(field).selectValues([sel], true, true);
         }
        
         function toggleOpen(div){
@@ -108,8 +114,8 @@ define( 'dashboard',function () {
             
         function parseTypeList(sel){
            
-            let list = sel.qListObject.qDataPages[0].qMatrix;
-            let typeOptions = []
+            var list = sel.qListObject.qDataPages[0].qMatrix;
+            var typeOptions = []
             // console.log(list)
             list.forEach(function(opt){
                 // console.log(opt)
@@ -121,8 +127,8 @@ define( 'dashboard',function () {
         function parseDateList(sel){
             // console.log(sel)
            
-            let list = sel.qListObject.qDataPages[0].qMatrix;
-            let dateOptions = []
+            var list = sel.qListObject.qDataPages[0].qMatrix;
+            var dateOptions = []
             // console.log(list)
             list.forEach(function(opt){
                 // console.log(opt)
@@ -134,8 +140,8 @@ define( 'dashboard',function () {
         function parseClinDepList(sel){
             // console.log(sel)
            
-            let list = sel.qListObject.qDataPages[0].qMatrix;
-            let clinDepOptions = []
+            var list = sel.qListObject.qDataPages[0].qMatrix;
+            var clinDepOptions = []
             // console.log(list)
             list.forEach(function(opt){
                 // console.log(opt)
@@ -147,8 +153,8 @@ define( 'dashboard',function () {
         function parseDivList(sel){
             // console.log(sel)
            
-            let list = sel.qListObject.qDataPages[0].qMatrix;
-            let divOptions = []
+            var list = sel.qListObject.qDataPages[0].qMatrix;
+            var divOptions = []
             // console.log(list)
             list.forEach(function(opt){
                 // console.log(opt)
@@ -160,8 +166,8 @@ define( 'dashboard',function () {
         function parseDepList(sel){
             // console.log(sel)
            
-            let list = sel.qListObject.qDataPages[0].qMatrix;
-            let depOptions = []
+            var list = sel.qListObject.qDataPages[0].qMatrix;
+            var depOptions = []
             // console.log(list)
             list.forEach(function(opt){
                 // console.log(opt)
@@ -173,8 +179,8 @@ define( 'dashboard',function () {
 
         $("#ClearAll").click(function() {
 
-            aQlikApp.clearAll();
-            aQlikApp2.clearAll();
+            apps[0].clearAll();
+            apps[1].clearAll();
             
                   });
 
