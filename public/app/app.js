@@ -30,12 +30,16 @@ require(["js/qlik"], function (qlik) {
             app.component('footerComponent', footer);
             app.component('dashboardComponent', dashboard);
             app.service('qlikService', qlikService);
+            app.run(['qlikService',function(qlikService){
+                qlikService.openApps(qlik,'937ded89-6791-44d5-80f1-fa60f9956e5d','0e1e7b51-2f89-48ac-b451-9f474cf5a1df',config)
+            }]);
             angular.bootstrap(document, ["qlik-angular", "mashup-app"]);
-            aQlik = qlik;
-            aQlikApp = qlik.openApp('937ded89-6791-44d5-80f1-fa60f9956e5d', config); // Appointments, PROD
-            aQlikApp2 = qlik.openApp('0e1e7b51-2f89-48ac-b451-9f474cf5a1df', config); // Slots, PROD
+            // aQlik = qlik;
+            // aQlikApp = qlik.openApp('937ded89-6791-44d5-80f1-fa60f9956e5d', config); // Appointments, PROD
+            // aQlikApp.getObject('CurrentSelections', 'CurrentSelections')
+            // aQlikApp2 = qlik.openApp('0e1e7b51-2f89-48ac-b451-9f474cf5a1df', config); // Slots, PROD
             // aQlikApp = qlik.openApp('bf83b112-8b60-4d91-8ea3-c6daa1ef18bf', config); // UAT
-            aQlikApp.getObject('CurrentSelections', 'CurrentSelections')
+            
         }
     )
 });
