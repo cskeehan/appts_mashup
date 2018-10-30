@@ -31,7 +31,7 @@ require(["js/qlik"], function (qlik) {
             app.component('dashboardComponent', dashboard);
             app.service('qlikService', qlikService);
             app.run(['qlikService',function(qlikService){
-                qlikService.openApps(qlik,'937ded89-6791-44d5-80f1-fa60f9956e5d','0e1e7b51-2f89-48ac-b451-9f474cf5a1df',config)
+                qlikService.openApps(qlik,'937ded89-6791-44d5-80f1-fa60f9956e5d','6e259a27-1634-4428-b923-003c3c17be60',config)
             }]);
             angular.bootstrap(document, ["qlik-angular", "mashup-app"]);
             // aQlik = qlik;

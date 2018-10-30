@@ -12,8 +12,8 @@ define( 'dashboard',function () {
             var chart2Id = 'PFDXUK'
             var chart3Id = 'ZSaDtKH'
             var chart4Id = 'ChgJQm'
-            var chart5Id = 'dKHwpR'
-            var chart6Id = 'gbDnJa'
+            var chart5Id = 'eLnY'
+            var chart6Id = 'TCdd'
 
             var apps;
 
