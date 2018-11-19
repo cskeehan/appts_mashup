@@ -302,4 +302,54 @@ ul li {
   position: fixed !important;
   z-index: 1000 !important;
 } 
-  
+
+.helptext {
+  float: left;
+  /* color: #152456; */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'QlikView Sans'
+}
+
+/* #ClinicalDepartmentFilter {
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  transition: 10s;
+}
+
+#ClinicalDivisionFilter {
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  transition: 0.2s 1s;
+}
+
+#DepartmentFilter {
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  transition: 0.2s 1s;
+}
+
+#AppointmentMonthYearFilter {
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  transition: 0.2s 1s;
+}
+
+#ProviderTypeFilter {
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  transition: 0.2s 5s;
+} */

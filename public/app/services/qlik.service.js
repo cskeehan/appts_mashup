@@ -21,12 +21,15 @@ define('qlikService', function () {
             this.qlik = qlik;
         }
 
-        function openApps(qlik, appId_1, appId_2, config) {
+        function openApps(qlik, appId_1, appId_2, appId_3, config) {
             app1 = qlik.openApp(appId_1, config)
             app1.model.waitForOpen.promise.then(function(a){
                 app2 = qlik.openApp(appId_2,config);
                 app2.model.waitForOpen.promise.then(function(a){
-                    $rootScope.$broadcast('apps-loaded')
+                    app3 = qlik.openApp(appId_3,config);
+                    app3.model.waitForOpen.promise.then(function(a){
+                        $rootScope.$broadcast('apps-loaded')
+                    })
                 })
             })
             aConfig = config;
@@ -34,7 +37,7 @@ define('qlikService', function () {
         }
 
         function getApps(){
-            return [app1,app2]
+            return [app1,app2,app3]
         }
         function setQlik(qlikJS) {
             this.qlik = qlikJS;

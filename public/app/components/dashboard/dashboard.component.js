@@ -14,6 +14,7 @@ define( 'dashboard',function () {
             var chart4Id = 'ChgJQm'
             var chart5Id = 'eLnY'
             var chart6Id = 'TCdd'
+            var chart7Id = 'JmsWF'
 
             var apps;
 
@@ -27,7 +28,7 @@ define( 'dashboard',function () {
                 apps[0].clearAll().then(function(a){
                     apps[0].getObject('dateFilter', dateId);
                     apps[0].getObject('provTypeFilter', provTypeId);
-                    apps[0].getObject('chart1', chart1Id); //{noInteraction: true}
+                    apps[0].getObject('chart1', chart1Id); //, {noInteraction: true});
                     apps[0].getObject('chart2', chart2Id);
                     apps[0].getObject('chart3', chart3Id);
                     apps[0].getObject('chart4', chart4Id);
@@ -38,6 +39,9 @@ define( 'dashboard',function () {
                 apps[1].clearAll().then(function(a){
                     apps[1].getObject('chart5', chart5Id);
                     apps[1].getObject('chart6', chart6Id);
+            })
+                apps[2].clearAll().then(function(a){
+                    apps[2].getObject('chart7', chart7Id);
             })
                 // init create list
                 apps[0].createList({
@@ -106,6 +110,7 @@ define( 'dashboard',function () {
             // console.log(val)
             apps[0].field(field).selectValues([sel], true, true);
             apps[1].field(field).selectValues([sel], true, true);
+            apps[2].field(field).selectValues([sel], true, true);
         }
        
         function toggleOpen(div){
@@ -181,6 +186,7 @@ define( 'dashboard',function () {
 
             apps[0].clearAll();
             apps[1].clearAll();
+            apps[2].clearAll();
             
                   });
 
