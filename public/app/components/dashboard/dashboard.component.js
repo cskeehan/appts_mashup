@@ -15,6 +15,7 @@ define( 'dashboard',function () {
             var chart5Id = 'eLnY'
             var chart6Id = 'TCdd'
             var chart7Id = 'JmsWF'
+            var filterId = 'fcXUJfd'
 
             var apps;
 
@@ -39,6 +40,7 @@ define( 'dashboard',function () {
                 apps[1].clearAll().then(function(a){
                     apps[1].getObject('chart5', chart5Id);
                     apps[1].getObject('chart6', chart6Id);
+                    apps[1].getObject('filter', filterId);
             })
                 apps[2].clearAll().then(function(a){
                     apps[2].getObject('chart7', chart7Id);

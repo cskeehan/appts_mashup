@@ -113,6 +113,20 @@
   justify-content: center;
 }
 
+.qlik-filter-container {
+  height: 30px;
+  width: 100%;
+  /* justify-content: left */
+  /* margin: 20px; */
+}
+
+.qlik-filter {
+  height: 30px;
+  width: 25%;
+  justify-content: left;
+  margin: 15px
+}
+
 .data-container {
   display: flex;
   padding: 10px;
