@@ -90,17 +90,14 @@
 
 .kpi {
   height: 180px;
-  width: 100%
+  width: 100%;
+  /* margin: 20px */
 }
 
 .content {
   padding: 10px;
   width: 100%;
 }
-
-/* .content {
-  height: 600px;
-} */
 
 .chart {
   height: 800px;
@@ -327,43 +324,3 @@ ul li {
   font-weight: bold;
   font-family: 'QlikView Sans'
 }
-
-/* #ClinicalDepartmentFilter {
-  visibility: hidden;
-  position: absolute;
-  top: 105%;
-  left: 0;
-  transition: 10s;
-}
-
-#ClinicalDivisionFilter {
-  visibility: hidden;
-  position: absolute;
-  top: 105%;
-  left: 0;
-  transition: 0.2s 1s;
-}
-
-#DepartmentFilter {
-  visibility: hidden;
-  position: absolute;
-  top: 105%;
-  left: 0;
-  transition: 0.2s 1s;
-}
-
-#AppointmentMonthYearFilter {
-  visibility: hidden;
-  position: absolute;
-  top: 105%;
-  left: 0;
-  transition: 0.2s 1s;
-}
-
-#ProviderTypeFilter {
-  visibility: hidden;
-  position: absolute;
-  top: 105%;
-  left: 0;
-  transition: 0.2s 5s;
-} */

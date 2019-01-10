@@ -1,143 +1,33 @@
-<div id="CurrentSelections" class='selections'>
+<!-- <div id="CurrentSelections" class='selections'>
 
-</div>
-<!-- <div class='filter-container'> -->
-    <!-- <div class='filter' id='dateFilter'></div> -->
-    <!-- <div class='filter' id='provTypeFilter'></div> -->
-    <!-- <div class='filter' id='clinDepFilter'></div>
-    <div class='filter' id='clinDivFilter'></div>
-    <div class='filter' id='departmentFilter'></div>
-    <div class='filter' id='provFilter'></div> -->
-<!-- </div> -->
+</div> -->
 
-<script>
-    function populateSearchBox(InputId, filterId) {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById(InputId);
-        filter = input.value.toUpperCase();
-        ul = document.getElementById(filterId);
-        li = ul.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("*")[0];
-            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = "";
-            } else {
-                li[i].style.display = "none";
-            }
-        }
-    }
-</script>
-
-<div class="filter-container">
-    <div class="helptext">For the best user experience, please use the filter panes directly below.
-    </div>
-</div>
-
-<div class="filter-container">
-    <div class="dropdown-container">
-        <div class="dropdown-button noselect semi-square">
-            <div class="dropdown-label">Clinical Department</div>
-            <i class="fa fa-filter"></i>
-            </div>
-        <div class="dropdown-list date-filter">
-            <input type="text" id="ClinicalDepartmentInputId" onkeyup="populateSearchBox('ClinicalDepartmentInputId', 'ClinicalDepartmentFilter' )" placeholder="Type in filter" >
-            <ul id="ClinicalDepartmentFilter">
-                <li ng-repeat="option in cf.clinDepOptions">
-                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Clinical Department', option)">{{option.name}}</div>
-                       
-                    </li>
-                </ul>
-            </div>
-    </div>
-    <div class="dropdown-container">
-        <div class="dropdown-button noselect semi-square">
-            <div class="dropdown-label">Clinical Division</div>
-            <i class="fa fa-filter"></i>
-            </div>
-        <div class="dropdown-list date-filter">
-            <input type="text" id="ClinicalDivisionInputId" onkeyup="populateSearchBox('ClinicalDivisionInputId', 'ClinicalDivisionFilter' )" placeholder="Type in filter" >
-		    <ul id="ClinicalDivisionFilter">
-                <li ng-repeat="option in cf.divOptions">
-                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Clinical Division', option)">{{option.name}}</div>
-                           
-                    </li>
-                </ul>
-            </div>
-    </div>
-    <div class="dropdown-container">
-        <div class="dropdown-button noselect semi-square">
-            <div class="dropdown-label">Department</div>
-            <i class="fa fa-filter"></i>
-            </div>
-        <div class="dropdown-list date-filter">
-            <input type="text" id="DepartmentInputId" onkeyup="populateSearchBox('DepartmentInputId', 'DepartmentFilter' )" placeholder="Type in filter" >		
-            <ul id="DepartmentFilter">
-                <li ng-repeat="option in cf.depOptions">
-                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Department', option)">{{option.name}}</div>
-                           
-                    </li>
-                </ul>
-            </div>
-    </div>
-    <div class="dropdown-container">
-        <div class="dropdown-button noselect semi-square">
-            <div class="dropdown-label">Appointment Month Year</div>
-            <i class="fa fa-filter"></i>
-            </div>
-        <div class="dropdown-list date-filter">
-            <input type="text" id="AppointmentMonthYearInputId" onkeyup="populateSearchBox('AppointmentMonthYearInputId', 'AppointmentMonthYearFilter' )" placeholder="Type in filter" >		
-		    <ul id="AppointmentMonthYearFilter">
-                <li ng-repeat="option in cf.dateOptions">
-                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Appt Date Calendar Month Year', option)">{{option.name}}</div>
-                   
-                    </li>
-                </ul>
-            </div>
-    </div>
-    <div class="dropdown-container">
-        <div class="dropdown-button noselect semi-square" >
-            <div class="dropdown-label">Provider Type</div>
-            <i class="fa fa-filter"></i>
-            </div>
-        <div class="dropdown-list type-filter">
-            <input type="text" id="ProviderTypeInputId" onkeyup="populateSearchBox('ProviderTypeInputId', 'ProviderTypeFilter' )" placeholder="Type in filter" >		
-		    <ul id="ProviderTypeFilter">
-                <li ng-repeat="option in cf.typeOptions">
-                    <div name="{{option.name}}" class="{{option.state}}"ng-click="cf.changeSel('Provider Type', option)">{{option.name}}</div>
-                    </li>
-                </ul>
-            </div>
-    </div>
-    <div class="dropdown-container">
-        <div class="dropdown-button noselect semi-square" id="ClearAll">
-            <div class="dropdown-label">Clear</div>
-            <i class="fa fa-refresh"></i>
-        </div>
-    </div>   
+<div class='graph-container'>
+    <div class='kpi' id='kpi1'></div>
+    <div class='kpi' id='kpi2'></div>
+    <div class='kpi' id='kpi3'></div>
 </div>
 
 <div class='graph-container'>
-    <div class='chart' id='chart6'></div>
-    <div class='chart' id='chart7'></div>
-    <div class='chart' id='chart3'></div>
+    <div class='kpi' id='kpi4'></div>
+    <div class='kpi' id='kpi5'></div>
+    <div class='kpi' id='kpi6'></div>
 </div>
 
 <div class='graph-container'>
-    <div class='chart' id='chart1'></div>
-    <div class='chart' id='chart4'></div>
-    <div class='chart' id='chart2'></div>
+    <div class='kpi' id='kpi7'></div>
+    <div class='kpi' id='kpi8'></div>
+    <div class='kpi' id='kpi9'></div>
 </div>
 
 <div class='graph-container'>
-    <div class='qlik-filter-container'></div>
-    <div class='qlik-filter-container'>
-        <div class='qlik-filter' id='filter'></div>
-    </div>
-    <div class='qlik-filter-container'></div>
+    <div class='kpi' id='kpi10'></div>
+    <div class='kpi' id='kpi11'></div>
+    <div class='kpi' id='kpi12'></div>
 </div>
 
 <div class='graph-container'>
-    <div class='chart'></div>
-    <div class='chart' id='chart5'></div>
-    <div class='chart'></div>
+    <div class='kpi' id='kpi13'></div>
+    <div class='kpi' id='kpi14'></div>
+    <div class='kpi' id='kpi15'></div>
 </div>

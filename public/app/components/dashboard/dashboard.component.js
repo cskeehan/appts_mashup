@@ -4,18 +4,22 @@ define( 'dashboard',function () {
         dashboardController.$inject = ['$rootScope', 'qlikService'];
         function dashboardController($rootScope,qlikService) {
             var vm = this;
-            vm.changeSel = changeSel;
             vm.toggleOpen = toggleOpen;
-            var dateId = 'KmdYJg'
-            var provTypeId = 'Cmhyjzp'
-            var chart1Id = 'VTthkJx'
-            var chart2Id = 'PFDXUK'
-            var chart3Id = 'ZSaDtKH'
-            var chart4Id = 'ChgJQm'
-            var chart5Id = 'eLnY'
-            var chart6Id = 'TCdd'
-            var chart7Id = 'JmsWF'
-            var filterId = 'fcXUJfd'
+            var kpi1Id = 'fMZmZ' // Executive Scorecard
+            var kpi2Id = 'DJBGDS' // Patient Flow
+            var kpi3Id = 'naJDmkX' // Patient Flow
+            var kpi4Id = 'pPqm' // Patient Flow
+            var kpi5Id = 'CUpPgWM' // Patient Flow
+            var kpi6Id = 'duDLdr' // ED
+            var kpi7Id = 'tAmQP' // ED
+            var kpi8Id = 'pSeGreZ' // Executive Scorecard
+            var kpi9Id = 'qLutEJ' // Executive Scorecard
+            var kpi10Id = '' // Periop
+            var kpi11Id = 'GLhYvPP' // Observations
+            var kpi12Id = 'ceNpgS' // Executive Scorecard
+            var kpi13Id = 'XeECfa' // Observations
+            var kpi14Id = 'mwxhcb' // Appointments
+            var kpi15Id = 'FXTVw' // Referrals
 
             var apps;
 
@@ -27,161 +31,39 @@ define( 'dashboard',function () {
            
             function init() {
                 apps[0].clearAll().then(function(a){
-                    apps[0].getObject('dateFilter', dateId);
-                    apps[0].getObject('provTypeFilter', provTypeId);
-                    apps[0].getObject('chart1', chart1Id); //, {noInteraction: true});
-                    apps[0].getObject('chart2', chart2Id);
-                    apps[0].getObject('chart3', chart3Id);
-                    apps[0].getObject('chart4', chart4Id);
-                    apps[0].getObject('CurrentSelections', 'CurrentSelections')
-               
+                    apps[0].getObject('kpi1', kpi1Id); //, {noInteraction: true});
+                    apps[0].getObject('kpi8', kpi8Id);
+                    apps[0].getObject('kpi9', kpi9Id);
+                    apps[0].getObject('kpi12', kpi12Id);
+                    //apps[0].getObject('CurrentSelections', 'CurrentSelections')
             })
-        
                 apps[1].clearAll().then(function(a){
-                    apps[1].getObject('chart5', chart5Id);
-                    apps[1].getObject('chart6', chart6Id);
-                    apps[1].getObject('filter', filterId);
+                    apps[1].getObject('kpi2', kpi2Id);
+                    apps[1].getObject('kpi3', kpi3Id);
+                    apps[1].getObject('kpi4', kpi4Id);
+                    apps[1].getObject('kpi5', kpi5Id);
             })
                 apps[2].clearAll().then(function(a){
-                    apps[2].getObject('chart7', chart7Id);
+                    apps[2].getObject('kpi6', kpi6Id);
+                    apps[2].getObject('kpi7', kpi7Id);
             })
-                // init create list
-                apps[0].createList({
-                    "qDef": {"qFieldDefs": ["Appt Date Calendar Month Year"]},
-                        "qInitialDataFetch": [{
-                            qTop : 0,
-                            qLeft : 0,
-                            qHeight : 100,
-                            qWidth : 1
-                        }]
-                    },parseDateList)
-
-                    // init create list
-                    apps[0].createList({
-                    "qDef": {"qFieldDefs": ["Provider Type"]},
-                        "qInitialDataFetch": [{
-                            qTop : 0,
-                            qLeft : 0,
-                            qHeight : 100,
-                            qWidth : 1
-                        }]
-                    },parseTypeList)
-
-                    // init create list
-                    apps[0].createList({
-                    "qDef": {"qFieldDefs": ["Clinical Department"]},
-                        "qInitialDataFetch": [{
-                            qTop : 0,
-                            qLeft : 0,
-                            qHeight : 100,
-                            qWidth : 1
-                        }]
-                    },parseClinDepList)
-
-                    // init create list
-                    apps[0].createList({
-                        "qDef": {"qFieldDefs": ["Clinical Division"]},
-                            "qInitialDataFetch": [{
-                                qTop : 0,
-                                qLeft : 0,
-                                qHeight : 100,
-                                qWidth : 1
-                            }]
-                        },parseDivList)
-
-                    // init create list
-                    apps[0].createList({
-                        "qDef": {"qFieldDefs": ["Department"]},
-                            "qInitialDataFetch": [{
-                                qTop : 0,
-                                qLeft : 0,
-                                qHeight : 500,
-                                qWidth : 1
-                            }]
-                        },parseDepList)
-        }
-
-        function changeSel(field, val){
-            // console.log(val)
-            var sel;
-            if(field=='Appt Date Calendar Month Year'){
-                sel = val.num
-            }else{
-                sel = val.name
-            }
-            // console.log(val)
-            apps[0].field(field).selectValues([sel], true, true);
-            apps[1].field(field).selectValues([sel], true, true);
-            apps[2].field(field).selectValues([sel], true, true);
+                apps[3].clearAll().then(function(a){
+                    apps[3].getObject('kpi10', kpi10Id);
+            })
+                apps[4].clearAll().then(function(a){
+                    apps[4].getObject('kpi11', kpi11Id);
+                    apps[4].getObject('kpi13', kpi13Id);
+            })
+                apps[5].clearAll().then(function(a){
+                    apps[5].getObject('kpi14', kpi14Id);
+            })
+                apps[6].clearAll().then(function(a){
+                    apps[6].getObject('kpi15', kpi15Id);
+            })         
         }
        
         function toggleOpen(div){
             $('.'+div).toggle();
-        }
-            
-        function parseTypeList(sel){
-           
-            var list = sel.qListObject.qDataPages[0].qMatrix;
-            var typeOptions = []
-            // console.log(list)
-            list.forEach(function(opt){
-                // console.log(opt)
-                typeOptions.push({name:opt[0].qText, state: opt[0].qState})
-            })
-            vm.typeOptions = typeOptions
-        }
-
-        function parseDateList(sel){
-            // console.log(sel)
-           
-            var list = sel.qListObject.qDataPages[0].qMatrix;
-            var dateOptions = []
-            // console.log(list)
-            list.forEach(function(opt){
-                // console.log(opt)
-                dateOptions.push({name:opt[0].qText, num: opt[0].qNum, state: opt[0].qState})
-            })
-            vm.dateOptions = dateOptions
-        }
-
-        function parseClinDepList(sel){
-            // console.log(sel)
-           
-            var list = sel.qListObject.qDataPages[0].qMatrix;
-            var clinDepOptions = []
-            // console.log(list)
-            list.forEach(function(opt){
-                // console.log(opt)
-                clinDepOptions.push({name:opt[0].qText, num: opt[0].qNum, state: opt[0].qState})
-            })
-            vm.clinDepOptions = clinDepOptions
-        }
-
-        function parseDivList(sel){
-            // console.log(sel)
-           
-            var list = sel.qListObject.qDataPages[0].qMatrix;
-            var divOptions = []
-            // console.log(list)
-            list.forEach(function(opt){
-                // console.log(opt)
-                divOptions.push({name:opt[0].qText, num: opt[0].qNum, state: opt[0].qState})
-            })
-            vm.divOptions = divOptions
-        }
-
-        function parseDepList(sel){
-            // console.log(sel)
-           
-            var list = sel.qListObject.qDataPages[0].qMatrix;
-            var depOptions = []
-            // console.log(list)
-            list.forEach(function(opt){
-                // console.log(opt)
-                depOptions.push({name:opt[0].qText, num: opt[0].qNum, state: opt[0].qState})
-            })
-            // console.log(depOptions.length)
-            vm.depOptions = depOptions
         }
 
         $("#ClearAll").click(function() {

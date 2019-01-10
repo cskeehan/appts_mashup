@@ -31,15 +31,11 @@ require(["js/qlik"], function (qlik) {
             app.component('dashboardComponent', dashboard);
             app.service('qlikService', qlikService);
             app.run(['qlikService',function(qlikService){
-                qlikService.openApps(qlik,'937ded89-6791-44d5-80f1-fa60f9956e5d','6e259a27-1634-4428-b923-003c3c17be60',
-                '4a4a69cb-6967-4a85-be1d-7bb71a44bd15', config)
+                qlikService.openApps(qlik,'a3a03faa-3c7c-4f01-974e-9e9f7183a663', 'b4d84dfa-94b7-4865-a9d2-9a0a79a4fbea',
+                '6e4ccba4-12f2-44d7-9d1b-070f39fddebe', 'e0fb5a5a-233a-432a-849f-24c8a8e31353', 'fb1ffe11-e398-41c5-9306-168139f238e9',
+                '937ded89-6791-44d5-80f1-fa60f9956e5d', 'abfdf8ed-3078-40dd-9f3e-209e38dbd28e', config)
             }]);
             angular.bootstrap(document, ["qlik-angular", "mashup-app"]);
-            // aQlik = qlik;
-            // aQlikApp = qlik.openApp('937ded89-6791-44d5-80f1-fa60f9956e5d', config); // Appointments, PROD
-            // aQlikApp.getObject('CurrentSelections', 'CurrentSelections')
-            // aQlikApp2 = qlik.openApp('0e1e7b51-2f89-48ac-b451-9f474cf5a1df', config); // Slots, PROD
-            // aQlikApp = qlik.openApp('bf83b112-8b60-4d91-8ea3-c6daa1ef18bf', config); // UAT
             
         }
     )
