@@ -107,7 +107,7 @@
 
 .filter-container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 .qlik-filter-container {
@@ -193,6 +193,7 @@
 .graph-container{
   display: flex;
   width: 100%;
+  padding: 20px;
 }
 
 .noselect {
@@ -320,7 +321,8 @@ ul li {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 22px;
+  /* font-size: 22px; */
+  font-size: 35px;
   font-weight: bold;
   font-family: 'QlikView Sans'
 }

@@ -10,16 +10,15 @@ define( 'dashboard',function () {
             var kpi3Id = 'naJDmkX' // Patient Flow
             var kpi4Id = 'pPqm' // Patient Flow
             var kpi5Id = 'CUpPgWM' // Patient Flow
-            var kpi6Id = 'duDLdr' // ED
-            var kpi7Id = 'tAmQP' // ED
-            var kpi8Id = 'pSeGreZ' // Executive Scorecard
-            var kpi9Id = 'qLutEJ' // Executive Scorecard
-            var kpi10Id = '' // Periop
-            var kpi11Id = 'GLhYvPP' // Observations
-            var kpi12Id = 'ceNpgS' // Executive Scorecard
-            var kpi13Id = 'XeECfa' // Observations
-            var kpi14Id = 'mwxhcb' // Appointments
-            var kpi15Id = 'FXTVw' // Referrals
+            var kpi6Id = 'tAmQP' // ED
+            var kpi7Id = 'pSeGreZ' // Executive Scorecard
+            var kpi8Id = 'qLutEJ' // Executive Scorecard
+            var kpi9Id = 'tYmFdX' // Periop
+            var kpi10Id = 'GLhYvPP' // Observations
+            var kpi11Id = 'ceNpgS' // Executive Scorecard
+            var kpi12Id = 'XeECfa' // Observations
+            var kpi13Id = 'mwxhcb' // Appointments
+            var kpi14Id = 'FXTVw' // Referrals
 
             var apps;
 
@@ -32,9 +31,9 @@ define( 'dashboard',function () {
             function init() {
                 apps[0].clearAll().then(function(a){
                     apps[0].getObject('kpi1', kpi1Id); //, {noInteraction: true});
+                    apps[0].getObject('kpi7', kpi7Id);
                     apps[0].getObject('kpi8', kpi8Id);
-                    apps[0].getObject('kpi9', kpi9Id);
-                    apps[0].getObject('kpi12', kpi12Id);
+                    apps[0].getObject('kpi11', kpi11Id);
                     //apps[0].getObject('CurrentSelections', 'CurrentSelections')
             })
                 apps[1].clearAll().then(function(a){
@@ -45,20 +44,19 @@ define( 'dashboard',function () {
             })
                 apps[2].clearAll().then(function(a){
                     apps[2].getObject('kpi6', kpi6Id);
-                    apps[2].getObject('kpi7', kpi7Id);
             })
                 apps[3].clearAll().then(function(a){
-                    apps[3].getObject('kpi10', kpi10Id);
+                    apps[3].getObject('kpi9', kpi9Id);
             })
                 apps[4].clearAll().then(function(a){
-                    apps[4].getObject('kpi11', kpi11Id);
-                    apps[4].getObject('kpi13', kpi13Id);
+                    apps[4].getObject('kpi10', kpi10Id);
+                    apps[4].getObject('kpi12', kpi12Id);
             })
                 apps[5].clearAll().then(function(a){
-                    apps[5].getObject('kpi14', kpi14Id);
+                    apps[5].getObject('kpi13', kpi13Id);
             })
                 apps[6].clearAll().then(function(a){
-                    apps[6].getObject('kpi15', kpi15Id);
+                    apps[6].getObject('kpi14', kpi14Id);
             })         
         }
        
