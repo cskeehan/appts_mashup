@@ -1,7 +1,7 @@
 define('qlikService', function () {
 
-    qlikService.$inject = ['$rootScope']
-    function qlikService($rootScope) {
+    qlikService.$inject = ['$rootScope','$http']
+    function qlikService($rootScope,$http) {
 
         var service = this;
         var app1;
@@ -13,15 +13,23 @@ define('qlikService', function () {
         service.openApp = openApp;
         service.openApps = openApps;
         service.getApps = getApps;
-
+        var qConfig;
         
         function openApp(qlik, appId, config) {
             this.app = qlik.openApp(appId, config)
             this.config = config;
             this.qlik = qlik;
         }
-
+        function keepSessionAlive(){
+            setInterval(function(){
+                console.log(qConfig.host); 
+                var url = (qConfig.isSecure?'https://':'http://')+qConfig.host+qConfig.prefix+'api/hub/about'
+                console.log(url)
+                $http.get(url,
+                {withCredentials:true}); }, 840000); // 14 mins * 60 * 1000
+        }
         function openApps(qlik, appId_1, appId_2, appId_3, appId_4, appId_5, appId_6, appId_7, config) {
+            qConfig = config
             app1 = qlik.openApp(appId_1, config)
             app1.model.waitForOpen.promise.then(function(a){
                 app2 = qlik.openApp(appId_2,config);
@@ -37,6 +45,7 @@ define('qlikService', function () {
                                     app7 = qlik.openApp(appId_7,config);
                                     app7.model.waitForOpen.promise.then(function(a){
                                         $rootScope.$broadcast('apps-loaded')
+                                        keepSessionAlive()
                                     })
                                 })
                             })
