@@ -5,6 +5,7 @@ define( 'dashboard',function () {
         function dashboardController($rootScope,qlikService) {
             var vm = this;
             vm.toggleOpen = toggleOpen;
+<<<<<<< HEAD
             var kpi1Id = 'fMZmZ' // Executive Scorecard
             var kpi2Id = 'DJBGDS' // Patient Flow
             var kpi3Id = 'naJDmkX' // Patient Flow
@@ -19,6 +20,17 @@ define( 'dashboard',function () {
             var kpi12Id = 'XeECfa' // Observations
             var kpi13Id = 'mwxhcb' // Appointments
             var kpi14Id = 'FXTVw' // Referrals
+=======
+            var dateId = 'KmdYJg'
+            var provTypeId = 'Cmhyjzp'
+            var chart1Id = 'VTthkJx'
+            var chart2Id = 'PFDXUK'
+            var chart3Id = 'ZSaDtKH'
+            var chart4Id = 'ChgJQm'
+            var chart5Id = 'eLnY'
+            var chart6Id = 'TCdd'
+            var chart7Id = 'JmsWF'
+>>>>>>> parent of 4f9e1f5... Slots - add MonthYear filter
 
             var apps;
 
@@ -37,10 +49,15 @@ define( 'dashboard',function () {
                     //apps[0].getObject('CurrentSelections', 'CurrentSelections')
             })
                 apps[1].clearAll().then(function(a){
+<<<<<<< HEAD
                     apps[1].getObject('kpi2', kpi2Id);
                     apps[1].getObject('kpi3', kpi3Id);
                     apps[1].getObject('kpi4', kpi4Id);
                     apps[1].getObject('kpi5', kpi5Id);
+=======
+                    apps[1].getObject('chart5', chart5Id);
+                    apps[1].getObject('chart6', chart6Id);
+>>>>>>> parent of 4f9e1f5... Slots - add MonthYear filter
             })
                 apps[2].clearAll().then(function(a){
                     apps[2].getObject('kpi6', kpi6Id);
